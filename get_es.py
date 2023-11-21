@@ -11,6 +11,6 @@ response = requests.get(
     headers=headers,
     json=json_data,
 )
-
-for item in zip(data1['hits']['hits']):
+data1 = response.json()
+for item in data1['hits']['hits']:
     print(item['_source']['initialCausedBySubmissionId'])
